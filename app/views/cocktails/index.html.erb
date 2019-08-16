@@ -7,13 +7,16 @@
 
 <div class="view-content">
 
-<% @cocktails.each do |cocktail| %>
+  <% @cocktails.each do |cocktail| %>
 
-<div class="card" style="width: 200px, background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path cocktail.photo, crop: :fill %>')">
+  <div class = "card">
+    <div class="card-image"
+    style=" background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+    url('<%= cl_image_path cocktail.photo, width: 200, height: 100; crop: :thumb %>')">
+  </div>
   <div class="card-body">
     <h5 class="card-title"><%= cocktail.name %></h5>
-    <%= link_to "Go to Recipe", cocktail_path(cocktail.id), class: "btn btn-primary" %>
+    <%= link_to "Go to Recipe", cocktail_path(cocktail.id), class: "btn btn-flat" %>
   </div>
 </div>
 <% end %>
