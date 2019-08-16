@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.squarespace-cdn.com/content/v1/5a5644aae45a7ca343e434a2/1565821868432-Z0QIMUQB3C3B54HOZJQT/ke17ZwdGBToddI8pDm48kNu93_l1Rc0JoXikXAEKHf17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmDJyaVitQ06bkWUY0OMxkmN-bdz7wg8la12Me-ub45vBE5029s6uMXtkNCzVgxK8m/The+best+lemonade+recipe+ever.+seriously.+Lemonade+with+oleo+saccharum?);">
+  <div class="container">
+    <h1>Finest Cocktails</h1>
+    <a class="btn btn-flat" href="#">Try it</a>
+  </div>
+</div>
+
+<div class="view-content">
+
+<% @cocktails.each do |cocktail| %>
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= cocktail.name %></h5>
+    <p class="card-text"> <%= cocktail.ingredients.name %></p>
+    <%= link_to "Go to Recipe", cocktail_path(cocktail.id), class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>
+
+<%= link_to "Add a new cocktail", new_cocktail_path %>
+
+</div>

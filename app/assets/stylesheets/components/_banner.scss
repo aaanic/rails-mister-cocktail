@@ -1,0 +1,19 @@
+$white: #fff;
+
+.banner {
+  text-align: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  padding: 300px 0;
+  color: $white;
+  .btn-flat {
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid $white;
+    display: inline-block;
+    align-text: center;
+    background-color: transparent;
+  }
+}
