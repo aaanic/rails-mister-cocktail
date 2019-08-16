@@ -1,16 +1,31 @@
+<% if @cocktail.photo.nil? %>
+<div class="empty-header"><p>no image</p></div>
+<% else %>
+<div class="header"style=" background-position: center;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+url('<%= cl_image_path @cocktail.photo, position: :center %>')">
+</div>
+<% end %>
+<div class="container">
+  <div>
 <h1><%= @cocktail.name %></h1>
-
-
+<p><%=@cocktail.description %></p>
+</div>
 <h4>Ingredients:</h4>
 
+
 <ul>
-<% @doses.each do |d| %>
-<li><%= d.description %> <%= d.ingredient.name %> <%= link_to "Delete", delete_dose_path(d.cocktail, d), method: :delete,
-      data: { confirm: "Are you sure?" } %></li>
-<% end %>
+  <% @doses.each do |d| %>
+  <%= raise %>
+  <li><%= d.description %> <%= d.ingredient.name %> <%= link_to "Delete", delete_dose_path(d.cocktail, d), method: :delete,
+  data: { confirm: "Are you sure?" } %></li>
+  <% end %>
 </ul>
 
+<div class='horizontal-align'>
+<%= link_to "Add an ingredient", new_dose_path(@cocktail), class: 'btn-flat-main'%>
+</div>
 
-<%= link_to "Add an ingredient", new_dose_path(@cocktail) %>
 
-<%= link_to "Back to all", cocktails_path %>
+<%= link_to "← Back to all", cocktails_path, class: "back-link" %>
+
+</div>

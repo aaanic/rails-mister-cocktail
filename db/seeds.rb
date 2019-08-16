@@ -13,7 +13,6 @@ Ingredient.create(name: "ginger")
 Ingredient.create(name: "basil")
 Ingredient.create(name: "angostura")
 
-Cocktail.create(name: "Basil Smash")
 Cocktail.create(name: "Piña Colada")
 Cocktail.create(name: "Having fun at the beach")
 Cocktail.create(name: "Coconut Rush")

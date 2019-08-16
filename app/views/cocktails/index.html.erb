@@ -9,11 +9,10 @@
 
 <% @cocktails.each do |cocktail| %>
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+<div class="card" style="width: 200px, background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path cocktail.photo, crop: :fill %>')">
   <div class="card-body">
     <h5 class="card-title"><%= cocktail.name %></h5>
-    <p class="card-text"> <%= cocktail.ingredients.name %></p>
     <%= link_to "Go to Recipe", cocktail_path(cocktail.id), class: "btn btn-primary" %>
   </div>
 </div>
