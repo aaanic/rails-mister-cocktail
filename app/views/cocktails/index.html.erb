@@ -11,16 +11,19 @@
 
   <div class = "card">
     <div class="card-image"
-    style=" background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-    url('<%= cl_image_path cocktail.photo, width: 200, height: 100; crop: :thumb %>')">
+    style=" background-image:
+    url('<%= cl_image_path(cocktail.photo, :height => 170, :width => 200, :crop => :thumb) %>')">
   </div>
   <div class="card-body">
-    <h5 class="card-title"><%= cocktail.name %></h5>
-    <%= link_to "Go to Recipe", cocktail_path(cocktail.id), class: "btn btn-flat" %>
+    <h4 class="card-title"><%= cocktail.name %></h4>
+    <%= link_to "Go to Recipe →", cocktail_path(cocktail.id), class: "btn btn-flat" %>
   </div>
 </div>
 <% end %>
 
-<%= link_to "Add a new cocktail", new_cocktail_path %>
 
+</div>
+
+<div class='horizontal-align'>
+<%= link_to "Add a new cocktail", new_cocktail_path, class: 'btn-flat-main' %>
 </div>

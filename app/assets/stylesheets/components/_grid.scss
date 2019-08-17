@@ -1,7 +1,9 @@
 .view-content {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
+  margin: 60px auto;
+  justify-content: space-between;
 }
 
 .container {
